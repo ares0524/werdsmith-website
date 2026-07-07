@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-4xl font-semibold text-ink">Terms of Service</h1>
-      <p className="mt-2 text-sm text-stone">Last updated: June 29, 2026</p>
+      <p className="mt-2 text-sm text-stone">Last updated: July 7, 2026</p>
 
       <div className="mt-10 space-y-8 text-stone">
         <section>
@@ -45,7 +45,37 @@ export default function TermsPage() {
             dialogue generation) produces suggestions based on automated processing. It can be
             inaccurate, repetitive, or simply not what you wanted — you decide whether to keep,
             edit, or discard anything it generates. We are not responsible for the accuracy,
-            originality, or appropriateness of AI-generated suggestions.
+            originality, or appropriateness of AI-generated suggestions. AI use is subject to a
+            monthly prompt allowance that depends on your plan, as described below.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-ink">Free plan, subscriptions, and billing</h2>
+          <p className="mt-3 leading-relaxed">
+            Werdsmith&apos;s core editor is free. Free accounts can create up to 2 projects and use
+            up to 10 AI prompts per calendar month. Two optional subscriptions unlock more:
+          </p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            <li>
+              <span className="font-medium text-ink">Membership</span> unlocks unlimited projects,
+              cloud sync and backup across devices, publishing to your public portfolio, and all
+              premium editor fonts. It is available monthly or yearly, and the yearly plan may
+              include a 7-day free trial (one trial per customer).
+            </li>
+            <li>
+              <span className="font-medium text-ink">Ghostwriter</span> raises your AI prompt
+              allowance to 150 or 300 prompts per month, depending on the plan you choose.
+            </li>
+          </ul>
+          <p className="mt-3 leading-relaxed">
+            Subscriptions are purchased and billed through Google Play at the prices shown there,
+            and renew automatically until you cancel. You can cancel at any time in your Google
+            Play subscription settings; cancellation takes effect at the end of the current billing
+            period, and if you cancel a free trial before it ends you won&apos;t be charged. AI
+            prompt allowances reset each calendar month and unused prompts do not roll over.
+            Refunds are handled under Google Play&apos;s refund policies. If prices change, we will
+            give you notice as required by Google Play before the new price applies.
           </p>
         </section>
 
@@ -71,8 +101,10 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-ink">Termination</h2>
           <p className="mt-3 leading-relaxed">
-            You can delete your account at any time from within the app. We may suspend or
-            terminate accounts that violate these Terms.
+            You can delete your account at any time from within the app. Note that deleting your
+            account or uninstalling the app does not by itself cancel an active subscription — you
+            must also cancel it in your Google Play settings. We may suspend or terminate accounts
+            that violate these Terms.
           </p>
         </section>
 

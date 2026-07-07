@@ -29,6 +29,13 @@ export default function AboutPage() {
           why goals and streaks are built in from day one — showing up daily matters more than any
           single marathon session.
         </li>
+        <li>
+          <span className="font-medium text-ink">Pay for value, not access.</span> The editor is
+          free, with room for two projects and a monthly AI allowance. Two optional subscriptions —
+          Membership for unlimited projects, sync, portfolio publishing, and premium fonts, and
+          Ghostwriter for a bigger AI prompt allowance — fund the app instead of ads or selling
+          your data.
+        </li>
       </ul>
       <h2 className="mt-12 text-2xl font-semibold text-ink">Who it&apos;s for</h2>
       <p className="mt-4 leading-relaxed text-stone">

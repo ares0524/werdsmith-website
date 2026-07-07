@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-4xl font-semibold text-ink">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-stone">Last updated: June 29, 2026</p>
+      <p className="mt-2 text-sm text-stone">Last updated: July 7, 2026</p>
 
       <div className="mt-10 space-y-8 text-stone">
         <section>
@@ -32,7 +32,16 @@ export default function PrivacyPage() {
             </li>
             <li>
               <span className="font-medium text-ink">Usage data.</span> Writing activity needed to
-              power features you opt into, such as word counts, streaks, and goal progress.
+              power features you opt into, such as word counts, streaks, and goal progress. If you
+              use the AI assistant, we also count how many AI prompts you use each month to apply
+              your plan&apos;s monthly allowance.
+            </li>
+            <li>
+              <span className="font-medium text-ink">Subscription information.</span> If you
+              subscribe to Membership or Ghostwriter, purchases are processed by Google Play. We
+              receive your subscription status (which plans are active, billing period, and trial
+              status) so we can unlock the features you paid for. We never receive or store your
+              full payment card details.
             </li>
             <li>
               <span className="font-medium text-ink">AI assistant requests.</span> When you
@@ -47,9 +56,10 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-ink">How we use information</h2>
           <p className="mt-3 leading-relaxed">
             We use the information above to operate the Service: authenticate you, save and sync
-            your writing, power the AI assistant, calculate goals and streaks, and serve your
-            published portfolio pages. We do not sell your personal information or your writing,
-            and we do not use your content to serve third-party advertising.
+            your writing, power the AI assistant, calculate goals and streaks, manage your
+            subscription entitlements and monthly AI prompt allowance, and serve your published
+            portfolio pages. We do not sell your personal information or your writing, and we do
+            not use your content to serve third-party advertising.
           </p>
         </section>
 
@@ -76,8 +86,10 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-ink">Third-party services</h2>
           <p className="mt-3 leading-relaxed">
             We rely on a small number of third parties to operate the Service, including Google
-            Sign-In for authentication and an AI processing provider for AI assistant features.
-            These providers process data only as needed to deliver their part of the Service.
+            Sign-In for authentication, Google Play for subscription billing, and an AI processing
+            provider for AI assistant features. These providers process data only as needed to
+            deliver their part of the Service. Payments are subject to Google Play&apos;s own terms
+            and privacy policy.
           </p>
         </section>
 
