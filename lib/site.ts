@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 
 /** Canonical origin of the deployed site, without a trailing slash. */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://werdsmith.app').replace(/\/$/, '');
+// The host serving the site redirects the apex domain to www, so canonical
+// URLs, the sitemap, and OG tags must all use www or Google sees a loop.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.werdsmith.app').replace(/\/$/, '');
 
 export const SITE_NAME = 'Werdsmith';
 
