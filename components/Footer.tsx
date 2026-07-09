@@ -10,6 +10,7 @@ export default function Footer() {
           <Link href="/support" className="hover:text-ink">Support</Link>
           <Link href="/privacy" className="hover:text-ink">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-ink">Terms of Service</Link>
+          <Link href="/delete-account" className="hover:text-ink">Delete Account</Link>
         </div>
       </div>
     </footer>

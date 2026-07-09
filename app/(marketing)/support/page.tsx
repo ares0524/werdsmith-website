@@ -1,3 +1,13 @@
+import JsonLd from '@/components/JsonLd';
+import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
+
+export const metadata = pageMetadata({
+  title: 'Support & FAQ',
+  description:
+    'Get help with the Werdsmith writing app for Android: early access, offline sync, the AI writing assistant, publishing your portfolio, and how to reach us.',
+  path: '/support',
+});
+
 const faqs = [
   {
     q: 'Is Werdsmith available yet?',
@@ -29,18 +39,29 @@ const faqs = [
   },
 ];
 
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function SupportPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
+      <JsonLd data={faqStructuredData} />
       <h1 className="text-4xl font-semibold text-ink">Support</h1>
       <p className="mt-4 text-stone">
         Questions, bug reports, feedback, or want early access? We read every email.
       </p>
       <a
-        href="mailto:minhchien.df@gmail.com"
+        href={`mailto:${SUPPORT_EMAIL}`}
         className="mt-6 inline-block rounded-full bg-indigo px-6 py-3 text-sm font-semibold text-parchmentCard transition hover:opacity-90"
       >
-        Email minhchien.df@gmail.com
+        Email {SUPPORT_EMAIL}
       </a>
 
       <h2 className="mt-16 text-2xl font-semibold text-ink">Frequently asked questions</h2>

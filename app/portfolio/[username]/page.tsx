@@ -1,10 +1,48 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPortfolio } from '@/lib/api';
 import { formatDate } from '@/lib/format';
+import { OG_IMAGE, SITE_URL } from '@/lib/site';
+import JsonLd from '@/components/JsonLd';
 
 const TYPE_LABEL: Record<string, string> = { poem: 'Poem', story: 'Story', script: 'Script' };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ username: string }>;
+}): Promise<Metadata> {
+  const { username } = await params;
+  const portfolio = await getPortfolio(username);
+  if (!portfolio) return { title: 'Portfolio not found' };
+
+  const { user } = portfolio;
+  const title = `${user.display_name} (@${user.username})`;
+  const description =
+    user.bio || `Read ${user.display_name}'s published poems, stories, and scripts on Werdsmith.`;
+  const path = `/portfolio/${user.username}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${title} — Werdsmith`,
+      description,
+      url: path,
+      siteName: 'Werdsmith',
+      type: 'profile',
+      images: [user.photo_url ? { url: user.photo_url } : OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary',
+      title: `${title} — Werdsmith`,
+      description,
+    },
+  };
+}
 
 export default async function PortfolioPage({ params }: { params: Promise<{ username: string }> }) {
   const { username } = await params;
@@ -13,8 +51,22 @@ export default async function PortfolioPage({ params }: { params: Promise<{ user
 
   const { user, projects } = portfolio;
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: `${SITE_URL}/portfolio/${user.username}`,
+    mainEntity: {
+      '@type': 'Person',
+      name: user.display_name,
+      alternateName: `@${user.username}`,
+      ...(user.bio ? { description: user.bio } : {}),
+      ...(user.photo_url ? { image: user.photo_url } : {}),
+    },
+  };
+
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
+      <JsonLd data={structuredData} />
       <header className="flex items-center gap-4">
         <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-indigo text-xl font-semibold text-white">
           {user.photo_url ? (

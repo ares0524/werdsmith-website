@@ -1,6 +1,11 @@
-export const metadata = {
-  title: 'Privacy Policy — Werdsmith',
-};
+import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
+
+export const metadata = pageMetadata({
+  title: 'Privacy Policy',
+  description:
+    'How Werdsmith collects, uses, and protects your information across the Android writing app and this website.',
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (
@@ -124,8 +129,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-ink">Contact us</h2>
           <p className="mt-3 leading-relaxed">
             Questions about this policy or your data? Email{' '}
-            <a href="mailto:minhchien.df@gmail.com" className="font-medium text-indigo underline">
-              minhchien.df@gmail.com
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="font-medium text-indigo underline">
+              {SUPPORT_EMAIL}
             </a>
             .
           </p>

@@ -1,3 +1,5 @@
+import { cache } from 'react';
+
 const API_BASE_URL = (process.env.API_BASE_URL || 'http://localhost:4000').replace(/\/$/, '');
 
 export interface PortfolioUser {
@@ -44,24 +46,29 @@ export interface PortfolioProjectResponse {
   locked?: boolean;
 }
 
-/** Fetches a user's public portfolio. Returns null if the username doesn't exist (404). */
-export async function getPortfolio(username: string): Promise<PortfolioResponse | null> {
+/**
+ * Fetches a user's public portfolio. Returns null if the username doesn't exist (404).
+ * Wrapped in cache() so generateMetadata and the page share one request-scoped fetch.
+ */
+export const getPortfolio = cache(async (username: string): Promise<PortfolioResponse | null> => {
   const res = await fetch(`${API_BASE_URL}/portfolio/${encodeURIComponent(username)}`, { cache: 'no-store' });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`Failed to load portfolio for ${username}: ${res.status}`);
   return res.json();
-}
+});
 
-/** Fetches one published project (with its documents) from a user's portfolio. Null if missing/unpublished. */
-export async function getPortfolioProject(
-  username: string,
-  projectId: string,
-): Promise<PortfolioProjectResponse | null> {
-  const res = await fetch(
-    `${API_BASE_URL}/portfolio/${encodeURIComponent(username)}/${encodeURIComponent(projectId)}`,
-    { cache: 'no-store' },
-  );
-  if (res.status === 404) return null;
-  if (!res.ok) throw new Error(`Failed to load project ${projectId}: ${res.status}`);
-  return res.json();
-}
+/**
+ * Fetches one published project (with its documents) from a user's portfolio. Null if
+ * missing/unpublished. Wrapped in cache() like getPortfolio.
+ */
+export const getPortfolioProject = cache(
+  async (username: string, projectId: string): Promise<PortfolioProjectResponse | null> => {
+    const res = await fetch(
+      `${API_BASE_URL}/portfolio/${encodeURIComponent(username)}/${encodeURIComponent(projectId)}`,
+      { cache: 'no-store' },
+    );
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error(`Failed to load project ${projectId}: ${res.status}`);
+    return res.json();
+  },
+);

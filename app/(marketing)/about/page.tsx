@@ -1,3 +1,12 @@
+import { pageMetadata } from '@/lib/site';
+
+export const metadata = pageMetadata({
+  title: 'About',
+  description:
+    'Why we built Werdsmith: an offline-first Android writing app where AI assists instead of replacing, your drafts stay yours, and daily consistency is built in.',
+  path: '/about',
+});
+
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">

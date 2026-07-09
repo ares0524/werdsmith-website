@@ -1,6 +1,11 @@
-export const metadata = {
-  title: 'Terms of Service — Werdsmith',
-};
+import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
+
+export const metadata = pageMetadata({
+  title: 'Terms of Service',
+  description:
+    'The terms that govern your use of the Werdsmith Android writing app and website, including your account, your content, and subscriptions.',
+  path: '/terms',
+});
 
 export default function TermsPage() {
   return (
@@ -129,8 +134,8 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-ink">Contact us</h2>
           <p className="mt-3 leading-relaxed">
             Questions about these Terms? Email{' '}
-            <a href="mailto:minhchien.df@gmail.com" className="font-medium text-indigo underline">
-              minhchien.df@gmail.com
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="font-medium text-indigo underline">
+              {SUPPORT_EMAIL}
             </a>
             .
           </p>

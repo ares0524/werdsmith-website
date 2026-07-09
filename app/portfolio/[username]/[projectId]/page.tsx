@@ -1,7 +1,45 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPortfolioProject } from '@/lib/api';
 import { readingTimeMinutes } from '@/lib/format';
+import { OG_IMAGE, SITE_URL } from '@/lib/site';
+import JsonLd from '@/components/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ username: string; projectId: string }>;
+}): Promise<Metadata> {
+  const { username, projectId } = await params;
+  const result = await getPortfolioProject(username, projectId);
+  if (!result) return { title: 'Project not found' };
+
+  const { project } = result;
+  const title = `${project.title} by @${username}`;
+  const description =
+    project.description || `A ${project.type} by @${username}, published on Werdsmith.`;
+  const path = `/portfolio/${username}/${project.id}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${title} — Werdsmith`,
+      description,
+      url: path,
+      siteName: 'Werdsmith',
+      type: 'article',
+      images: [project.cover_image_url ? { url: project.cover_image_url } : OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary',
+      title: `${title} — Werdsmith`,
+      description,
+    },
+  };
+}
 
 export default async function PortfolioProjectPage({
   params,
@@ -17,8 +55,22 @@ export default async function PortfolioProjectPage({
   const totalWords = documents.reduce((sum, doc) => sum + doc.word_count, 0);
   const minutes = readingTimeMinutes(totalWords);
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: project.title,
+    url: `${SITE_URL}/portfolio/${username}/${project.id}`,
+    author: { '@type': 'Person', name: `@${username}`, url: `${SITE_URL}/portfolio/${username}` },
+    datePublished: new Date(project.created_at).toISOString(),
+    dateModified: new Date(project.updated_at).toISOString(),
+    ...(project.description ? { description: project.description } : {}),
+    ...(project.cover_image_url ? { image: project.cover_image_url } : {}),
+    ...(locked ? {} : { wordCount: totalWords }),
+  };
+
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
+      <JsonLd data={structuredData} />
       <Link href={`/portfolio/${username}`} className="text-sm text-indigo">
         ← Back to @{username}
       </Link>

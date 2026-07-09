@@ -1,4 +1,33 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/site';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: SITE_NAME,
+      applicationCategory: 'Productivity',
+      operatingSystem: 'Android',
+      url: SITE_URL,
+      image: `${SITE_URL}/logo.png`,
+      description:
+        'An offline-first writing app for Android with a distraction-free editor, an AI writing assistant, a visual story pin board, and daily writing goals and streaks.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+  ],
+};
 
 const features = [
   {
@@ -36,6 +65,7 @@ const features = [
 export default function HomePage() {
   return (
     <main>
+      <JsonLd data={structuredData} />
       {/* Hero */}
       <section className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 pt-20 pb-16 text-center sm:pt-28">
         <span className="rounded-full border border-hairline bg-parchmentCard px-4 py-1 text-xs font-medium uppercase tracking-wide text-stone">
@@ -45,8 +75,9 @@ export default function HomePage() {
           The writing app that thinks with you, not for you.
         </h1>
         <p className="max-w-xl text-lg text-stone">
-          Werdsmith is an offline-first writing companion with a distraction-free editor, a visual
-          story board, and an AI assistant on call — for every poem, story, and script you start.
+          Werdsmith is an offline-first writing app for Android with a distraction-free editor, a
+          visual story board, and an AI assistant on call — for every poem, story, and script you
+          start.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
