@@ -11,8 +11,8 @@ export default function Nav() {
     <header className="sticky top-0 z-50 border-b border-hairline bg-parchment/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-ink">
-          <Image src="/logo.png" alt="Werdsmithing" width={32} height={32} className="rounded-md" />
-          Werdsmithing
+          <Image src="/logo.png" alt="Werdsmith X" width={32} height={32} className="rounded-md" />
+          Werdsmith X
         </Link>
         <div className="flex items-center gap-6">
           {links.map((link) => (

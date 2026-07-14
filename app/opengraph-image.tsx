@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-export const alt = 'Werdsmithing — AI Writing App for Android, Offline-First';
+export const alt = 'Werdsmith X — AI Writing App for Android, Offline-First';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -30,7 +30,7 @@ export default async function OpengraphImage() {
         {/* eslint-disable-next-line @next/next/no-img-element -- next/image doesn't run inside ImageResponse */}
         <img src={logoSrc} alt="" width={140} height={140} style={{ borderRadius: 28 }} />
         <div style={{ display: 'flex', fontSize: 88, fontWeight: 600, color: '#1C1917' }}>
-          Werdsmithing
+          Werdsmith X
         </div>
         <div style={{ display: 'flex', fontSize: 34, color: '#78716C', textAlign: 'center' }}>
           The writing app that thinks with you, not for you.

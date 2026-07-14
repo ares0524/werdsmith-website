@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { project } = result;
   const title = `${project.title} by @${username}`;
   const description =
-    project.description || `A ${project.type} by @${username}, published on Werdsmithing.`;
+    project.description || `A ${project.type} by @${username}, published on Werdsmith X.`;
   const path = `/portfolio/${username}/${project.id}`;
 
   return {
@@ -26,16 +26,16 @@ export async function generateMetadata({
     description,
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} — Werdsmithing`,
+      title: `${title} — Werdsmith X`,
       description,
       url: path,
-      siteName: 'Werdsmithing',
+      siteName: 'Werdsmith X',
       type: 'article',
       images: [project.cover_image_url ? { url: project.cover_image_url } : OG_IMAGE],
     },
     twitter: {
       card: 'summary',
-      title: `${title} — Werdsmithing`,
+      title: `${title} — Werdsmith X`,
       description,
     },
   };

@@ -3,7 +3,7 @@ import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'Delete Your Account',
   description:
-    'How to permanently delete your Werdsmithing account and all associated data, from inside the app or by email.',
+    'How to permanently delete your Werdsmith X account and all associated data, from inside the app or by email.',
   path: '/delete-account',
 });
 
@@ -12,14 +12,14 @@ export default function DeleteAccountPage() {
     <main className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-4xl font-semibold text-ink">Delete your account</h1>
       <p className="mt-2 text-sm text-stone">
-        How to permanently delete your Werdsmithing account and the data that goes with it.
+        How to permanently delete your Werdsmith X account and the data that goes with it.
       </p>
 
       <div className="mt-10 space-y-8 text-stone">
         <section>
           <h2 className="text-xl font-semibold text-ink">Delete from the app</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-5">
-            <li>Open the Werdsmithing app and go to the <span className="font-medium text-ink">Settings</span> tab.</li>
+            <li>Open the Werdsmith X app and go to the <span className="font-medium text-ink">Settings</span> tab.</li>
             <li>
               Scroll to the bottom and tap <span className="font-medium text-ink">Delete Account</span>.
             </li>

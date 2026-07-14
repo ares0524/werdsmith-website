@@ -8,7 +8,7 @@ export default function PortfolioNotFound() {
         We couldn&apos;t find a portfolio at this address. Double-check the link, or it may not be published yet.
       </p>
       <Link href="/" className="mt-6 text-sm font-medium text-indigo">
-        Back to Werdsmithing
+        Back to Werdsmith X
       </Link>
     </main>
   );

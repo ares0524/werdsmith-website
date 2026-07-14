@@ -3,16 +3,16 @@ import { pageMetadata } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'About',
   description:
-    'Why we built Werdsmithing: an offline-first Android writing app where AI assists instead of replacing, your drafts stay yours, and daily consistency is built in.',
+    'Why we built Werdsmith X: an offline-first Android writing app where AI assists instead of replacing, your drafts stay yours, and daily consistency is built in.',
   path: '/about',
 });
 
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
-      <h1 className="text-4xl font-semibold text-ink">About Werdsmithing</h1>
+      <h1 className="text-4xl font-semibold text-ink">About Werdsmith X</h1>
       <p className="mt-6 text-lg leading-relaxed text-stone">
-        Werdsmithing started from a simple frustration: most writing apps are either bare-bones
+        Werdsmith X started from a simple frustration: most writing apps are either bare-bones
         notepads or bloated workspaces that bury you in panels you never asked for. We wanted
         something in between — an editor that gets out of the way, but has real help on hand the
         moment you want it.
@@ -49,11 +49,11 @@ export default function AboutPage() {
       <h2 className="mt-12 text-2xl font-semibold text-ink">Who it&apos;s for</h2>
       <p className="mt-4 leading-relaxed text-stone">
         Poets, novelists, screenwriters, and anyone who drafts in stolen pockets of time —
-        Werdsmithing organizes your work into projects and documents, helps you plan with a visual
+        Werdsmith X organizes your work into projects and documents, helps you plan with a visual
         pin board for characters and plot, and gets out of your way everywhere else.
       </p>
       <p className="mt-10 leading-relaxed text-stone">
-        Werdsmithing is currently in development for Android.{' '}
+        Werdsmith X is currently in development for Android.{' '}
         <a href="/support" className="font-medium text-indigo underline">
           Get in touch
         </a>{' '}
