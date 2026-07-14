@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 // URLs, the sitemap, and OG tags must all use www or Google sees a loop.
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.werdsmith.app').replace(/\/$/, '');
 
-export const SITE_NAME = 'Werdsmith';
+export const SITE_NAME = 'Werdsmithing';
 
 export const SUPPORT_EMAIL = 'support@werdsmith.app';
 

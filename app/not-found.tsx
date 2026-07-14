@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const suggestions = [
-  { href: '/', label: 'Home', description: 'What Werdsmith is and what it does' },
+  { href: '/', label: 'Home', description: 'What Werdsmithing is and what it does' },
   { href: '/about', label: 'About', description: 'Why we built a writing app for Android' },
   { href: '/support', label: 'Support & FAQ', description: 'Common questions and how to reach us' },
 ];

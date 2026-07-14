@@ -3,7 +3,7 @@ import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'Terms of Service',
   description:
-    'The terms that govern your use of the Werdsmith Android writing app and website, including your account, your content, and subscriptions.',
+    'The terms that govern your use of the Werdsmithing Android writing app and website, including your account, your content, and subscriptions.',
   path: '/terms',
 });
 
@@ -16,7 +16,7 @@ export default function TermsPage() {
       <div className="mt-10 space-y-8 text-stone">
         <section>
           <p className="leading-relaxed">
-            These Terms of Service (&quot;Terms&quot;) govern your use of the Werdsmith Android
+            These Terms of Service (&quot;Terms&quot;) govern your use of the Werdsmithing Android
             app and this website (together, the &quot;Service&quot;). By creating an account or
             using the Service, you agree to these Terms.
           </p>
@@ -34,7 +34,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-ink">Your content</h2>
           <p className="mt-3 leading-relaxed">
-            You retain full ownership of everything you write in Werdsmith. By using the Service,
+            You retain full ownership of everything you write in Werdsmithing. By using the Service,
             you grant us a limited license to store, sync, and process your content solely to
             operate the Service for you — for example, saving it, syncing it across sessions, and
             running an AI action you request. If you publish a project to your public portfolio,
@@ -58,7 +58,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-ink">Free plan, subscriptions, and billing</h2>
           <p className="mt-3 leading-relaxed">
-            Werdsmith&apos;s core editor is free. Free accounts can create up to 2 projects and use
+            Werdsmithing&apos;s core editor is free. Free accounts can create up to 2 projects and use
             up to 10 AI prompts per calendar month. Two optional subscriptions unlock more:
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
@@ -117,7 +117,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-ink">Disclaimer and limitation of liability</h2>
           <p className="mt-3 leading-relaxed">
             The Service is provided &quot;as is&quot; without warranties of any kind. To the
-            fullest extent permitted by law, Werdsmith is not liable for any indirect, incidental,
+            fullest extent permitted by law, Werdsmithing is not liable for any indirect, incidental,
             or consequential damages arising from your use of the Service.
           </p>
         </section>

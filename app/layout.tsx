@@ -4,12 +4,12 @@ import { SITE_NAME, SITE_URL } from '@/lib/site';
 import './globals.css';
 
 const description =
-  'Werdsmith is an offline-first writing app for Android with a distraction-free editor, an AI writing assistant, a visual story pin board, and daily writing goals and streaks.';
+  'Werdsmithing is an offline-first writing app for Android with a distraction-free editor, an AI writing assistant, a visual story pin board, and daily writing goals and streaks.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Werdsmith — AI Writing App for Android, Offline-First',
+    default: 'Werdsmithing — AI Writing App for Android, Offline-First',
     template: `%s — ${SITE_NAME}`,
   },
   description,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'novel writing app',
     'story planner',
     'writing goals',
-    'Werdsmith',
+    'Werdsmithing',
   ],
   icons: { icon: '/logo.png', apple: '/logo.png' },
   robots: { index: true, follow: true },
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: '/',
     siteName: SITE_NAME,
-    title: 'Werdsmith — AI Writing App for Android, Offline-First',
+    title: 'Werdsmithing — AI Writing App for Android, Offline-First',
     description,
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Werdsmith — AI Writing App for Android, Offline-First',
+    title: 'Werdsmithing — AI Writing App for Android, Offline-First',
     description,
   },
 };

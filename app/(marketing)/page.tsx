@@ -75,7 +75,7 @@ export default function HomePage() {
           The writing app that thinks with you, not for you.
         </h1>
         <p className="max-w-xl text-lg text-stone">
-          Werdsmith is an offline-first writing app for Android with a distraction-free editor, a
+          Werdsmithing is an offline-first writing app for Android with a distraction-free editor, a
           visual story board, and an AI assistant on call — for every poem, story, and script you
           start.
         </p>
@@ -150,7 +150,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <h2 className="text-3xl font-semibold text-ink">Be first to write with it</h2>
         <p className="mx-auto mt-3 max-w-md text-stone">
-          Werdsmith is in active development for Android. Reach out and we&apos;ll let you know
+          Werdsmithing is in active development for Android. Reach out and we&apos;ll let you know
           the moment it&apos;s ready to install.
         </p>
         <Link

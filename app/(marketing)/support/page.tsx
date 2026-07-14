@@ -4,22 +4,22 @@ import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'Support & FAQ',
   description:
-    'Get help with the Werdsmith writing app for Android: early access, offline sync, the AI writing assistant, publishing your portfolio, and how to reach us.',
+    'Get help with the Werdsmithing writing app for Android: early access, offline sync, the AI writing assistant, publishing your portfolio, and how to reach us.',
   path: '/support',
 });
 
 const faqs = [
   {
-    q: 'Is Werdsmith available yet?',
-    a: 'Werdsmith is in active development for Android. Email us and we will let you know the moment it is ready to install.',
+    q: 'Is Werdsmithing available yet?',
+    a: 'Werdsmithing is in active development for Android. Email us and we will let you know the moment it is ready to install.',
   },
   {
     q: 'What Android version do I need?',
-    a: 'Werdsmith targets Android 7.0 (API 24) and up, so it runs on the vast majority of Android phones in use today.',
+    a: 'Werdsmithing targets Android 7.0 (API 24) and up, so it runs on the vast majority of Android phones in use today.',
   },
   {
     q: 'Does it work offline?',
-    a: 'Yes — Werdsmith is offline-first. Your projects and documents are saved to your device immediately and sync to your account automatically whenever you have a connection.',
+    a: 'Yes — Werdsmithing is offline-first. Your projects and documents are saved to your device immediately and sync to your account automatically whenever you have a connection.',
   },
   {
     q: 'What can the AI assistant actually do?',
@@ -30,7 +30,7 @@ const faqs = [
     a: 'Your content stays on your device and syncs to your own account on our backend. Text is only sent to an AI provider when you actively trigger an AI action. See our Privacy Policy for details.',
   },
   {
-    q: 'Will Werdsmith be free?',
+    q: 'Will Werdsmithing be free?',
     a: "We haven't finalized pricing yet. Early access users will be the first to hear how that shapes up.",
   },
   {

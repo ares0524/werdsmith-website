@@ -3,7 +3,7 @@ import { pageMetadata, SUPPORT_EMAIL } from '@/lib/site';
 export const metadata = pageMetadata({
   title: 'Privacy Policy',
   description:
-    'How Werdsmith collects, uses, and protects your information across the Android writing app and this website.',
+    'How Werdsmithing collects, uses, and protects your information across the Android writing app and this website.',
   path: '/privacy',
 });
 
@@ -16,8 +16,8 @@ export default function PrivacyPage() {
       <div className="mt-10 space-y-8 text-stone">
         <section>
           <p className="leading-relaxed">
-            This Privacy Policy explains how Werdsmith (&quot;we&quot;, &quot;us&quot;) collects,
-            uses, and protects information when you use the Werdsmith Android app and this
+            This Privacy Policy explains how Werdsmithing (&quot;we&quot;, &quot;us&quot;) collects,
+            uses, and protects information when you use the Werdsmithing Android app and this
             website (together, the &quot;Service&quot;).
           </p>
         </section>
