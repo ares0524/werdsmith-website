@@ -1,42 +1,33 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { SITE_NAME, SITE_URL } from '@/lib/site';
+import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
+// Brand-neutral during the rebrand — the previous name is intentionally omitted
+// while the new brand is finalized, and the whole site is set to noindex so the
+// transitional stay-tuned page isn't picked up by search engines.
 const description =
-  'Werdsmith X is an offline-first writing app for Android with a distraction-free editor, an AI writing assistant, a visual story pin board, and daily writing goals and streaks.';
+  'A new writing app is on the way. Leave your email and we’ll let you know the moment it’s ready.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Werdsmith X — AI Writing App for Android, Offline-First',
-    template: `%s — ${SITE_NAME}`,
+    default: 'Something new is coming for writers',
+    template: '%s',
   },
   description,
-  applicationName: SITE_NAME,
-  keywords: [
-    'writing app',
-    'Android writing app',
-    'AI writing assistant',
-    'offline writing app',
-    'novel writing app',
-    'story planner',
-    'writing goals',
-    'Werdsmith X',
-  ],
   icons: { icon: '/logo.png', apple: '/logo.png' },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
   openGraph: {
     type: 'website',
     url: '/',
-    siteName: SITE_NAME,
-    title: 'Werdsmith X — AI Writing App for Android, Offline-First',
+    title: 'Something new is coming for writers',
     description,
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Werdsmith X — AI Writing App for Android, Offline-First',
+    title: 'Something new is coming for writers',
     description,
   },
 };
